@@ -1,7 +1,8 @@
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Display After Post Content\n"
-"POT-Creation-Date: 2019-02-24 18:50+0000\n"
+"POT-Creation-Date: 2020-01-05 13:09+0000\n"
 "PO-Revision-Date: 2019-02-24 18:50+0000\n"
 "Last-Translator: \n"
 "Language-Team: https://translate.azurecurve.co.uk/\n"
@@ -58,4 +59,8 @@ msgstr ""
 
 #: azrcrv-display-after-post-content.php:317
 msgid "Enter the content which should be displayed after the post content."
+msgstr ""
+
+#: azrcrv-display-after-post-content.php:325
+msgid "Submit"
 msgstr ""

@@ -3,7 +3,7 @@
  * ------------------------------------------------------------------------------
  * Plugin Name: Display After Post Content
  * Description: Allows insertion of content configured through admin panel to be displayed after the post content; works with shortcodes including Contact Form 7 and is multisite compatible.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: azurecurve
  * Author URI: https://development.azurecurve.co.uk/classicpress-plugins/
  * Plugin URI: https://development.azurecurve.co.uk/classicpress-plugins/display-after-post-content/
@@ -17,13 +17,13 @@
  * ------------------------------------------------------------------------------
  */
 
-// include plugin menu
-require_once(dirname( __FILE__).'/pluginmenu/menu.php');
-
 // Prevent direct access.
 if (!defined('ABSPATH')){
 	die();
 }
+
+// include plugin menu
+require_once(dirname( __FILE__).'/pluginmenu/menu.php');
 
 /**
  * Setup registration activation hook, actions, filters and shortcodes.
@@ -314,15 +314,15 @@ function azrcrv_dapc_network_settings(){
 				<?php wp_nonce_field('azrcrv-dapc', 'azrcrv-dapc-nonce'); ?>
 				<table class="form-table">
 				<tr><td>
-					<p><?php esc_html_e('Enter the content which should be displayed after the post content.', 'azc-dapc'); ?></p>
+					<p><?php esc_html_e('Enter the content which should be displayed after the post content.', 'display-after-post-content'); ?></p>
 				</td></tr>
 				<tr><td>
 					<textarea name="display_after_post_content" rows="15" cols="50" id="display_after_post_content" class="large-text code"><?php echo esc_textarea(stripslashes($options['display_after_post_content'])) ?></textarea>
-					<p class="description"><?php esc_html_e('The use of shortcodes (including those from other azurecurve plugins and Contact Form 7) is supported', 'azc-dapc'); ?></em>
+					<p class="description"><?php esc_html_e('The use of shortcodes (including those from other azurecurve plugins and Contact Form 7) is supported', 'display-after-post-content'); ?></em>
 					</p>
 				</td></tr>
 				</table>
-				<input type="submit" value="Save Changes" class="button-primary" />
+				<input type="submit" value="<?php esc_html_e('Submit', 'display-after-post-content'); ?>" class="button-primary"/>
 			</form>
 		</fieldset>
 	</div>
