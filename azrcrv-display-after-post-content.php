@@ -3,7 +3,7 @@
  * ------------------------------------------------------------------------------
  * Plugin Name: Display After Post Content
  * Description: Allows insertion of content configured through admin panel to be displayed after the post content; works with shortcodes including Contact Form 7 and is multisite compatible.
- * Version: 1.0.1
+ * Version: 1.1.0
  * Author: azurecurve
  * Author URI: https://development.azurecurve.co.uk/classicpress-plugins/
  * Plugin URI: https://development.azurecurve.co.uk/classicpress-plugins/display-after-post-content/
@@ -24,6 +24,10 @@ if (!defined('ABSPATH')){
 
 // include plugin menu
 require_once(dirname( __FILE__).'/pluginmenu/menu.php');
+register_activation_hook(__FILE__, 'azrcrv_create_plugin_menu_dasp');
+
+// include update client
+require_once(dirname(__FILE__).'/libraries/updateclient/UpdateClient.class.php');
 
 /**
  * Setup registration activation hook, actions, filters and shortcodes.
@@ -40,6 +44,7 @@ add_action('admin_post_azrcrv_dapc_save_options', 'azrcrv_dapc_save_options');
 add_action('network_admin_menu', 'azrcrv_dapc_create_network_admin_menu');
 add_action('network_admin_edit_azrcrv_dapc_save_network_options', 'azrcrv_dapc_save_network_options');
 add_action('wp_enqueue_scripts', 'azrcrv_dapc_load_css');
+add_action('plugins_loaded', 'azrcrv_cl_load_languages');
 
 // add filters
 add_filter('plugin_action_links', 'azrcrv_dapc_add_plugin_action_link', 10, 2);
@@ -47,6 +52,17 @@ add_filter ('the_content', 'azrcrv_dapc_display_after_post_content');
 
 // add shortcodes
 add_shortcode('shortcode', 'shortcode_function');
+
+/**
+ * Load language files.
+ *
+ * @since 1.0.0
+ *
+ */
+function azrcrv_cl_load_languages() {
+    $plugin_rel_path = basename(dirname(__FILE__)).'/languages';
+    load_plugin_textdomain('azrcrv-cl', false, $plugin_rel_path);
+}
 
 /**
  * Load CSS.
@@ -178,7 +194,7 @@ function azrcrv_dapc_display_options(){
 	?>
 	<div id="azrcrv-dapc-general" class="wrap">
 		<fieldset>
-			<h2><?php echo esc_html(get_admin_page_title()); ?></h2>
+			<h1><?php echo esc_html(get_admin_page_title()); ?></h1>
 			<?php if(isset($_GET['settings-updated'])){ ?>
 				<div class="notice notice-success is-dismissible">
 					<p><strong><?php esc_html_e('Settings have been saved.', 'display-after-post-content'); ?></strong></p>
@@ -305,7 +321,7 @@ function azrcrv_dapc_network_settings(){
 	?>
 	<div id="azrcrv-dapc-general" class="wrap">
 		<fieldset>
-			<h2><?php echo esc_html(get_admin_page_title()); ?></h2>
+			<h1><?php echo esc_html(get_admin_page_title()); ?></h1>
 			<form method="post" action="admin-post.php">
 				<input type="hidden" name="action" value="azrcrv_dapc_save_network_options" />
 				<input name="page_options" type="hidden" value="suffix" />
