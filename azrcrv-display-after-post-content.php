@@ -44,7 +44,7 @@ add_action('admin_post_azrcrv_dapc_save_options', 'azrcrv_dapc_save_options');
 add_action('network_admin_menu', 'azrcrv_dapc_create_network_admin_menu');
 add_action('network_admin_edit_azrcrv_dapc_save_network_options', 'azrcrv_dapc_save_network_options');
 add_action('wp_enqueue_scripts', 'azrcrv_dapc_load_css');
-add_action('plugins_loaded', 'azrcrv_dasp_load_languages');
+add_action('plugins_loaded', 'azrcrv_dapc_load_languages');
 
 // add filters
 add_filter('plugin_action_links', 'azrcrv_dapc_add_plugin_action_link', 10, 2);
@@ -59,7 +59,7 @@ add_shortcode('shortcode', 'shortcode_function');
  * @since 1.0.0
  *
  */
-function azrcrv_dasp_load_languages() {
+function azrcrv_dapc_load_languages() {
     $plugin_rel_path = basename(dirname(__FILE__)).'/languages';
     load_plugin_textdomain('display-after-post-content', false, $plugin_rel_path);
 }
