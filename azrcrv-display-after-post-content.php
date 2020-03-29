@@ -3,7 +3,7 @@
  * ------------------------------------------------------------------------------
  * Plugin Name: Display After Post Content
  * Description: Allows insertion of content configured through admin panel to be displayed after the post content; works with shortcodes including Contact Form 7 and is multisite compatible.
- * Version: 1.1.1
+ * Version: 1.1.2
  * Author: azurecurve
  * Author URI: https://development.azurecurve.co.uk/classicpress-plugins/
  * Plugin URI: https://development.azurecurve.co.uk/classicpress-plugins/display-after-post-content/
@@ -154,7 +154,7 @@ function azrcrv_dapc_add_plugin_action_link($links, $file){
 	}
 
 	if ($file == $this_plugin){
-		$settings_link = '<a href="'.get_bloginfo('wpurl').'/wp-admin/admin.php?page=azrcrv-dapc">'.esc_html__('Settings' ,'display-after-post-content').'</a>';
+		$settings_link = '<a href="'.get_bloginfo('wpurl').'/wp-admin/admin.php?page=azrcrv-dapc"><img src="'.plugins_url('/pluginmenu/images/Favicon-16x16.png', __FILE__).'" style="padding-top: 2px; margin-right: -5px; height: 16px; width: 16px;" alt="azurecurve" />'.esc_html__('Settings' ,'display-after-post-content').'</a>';
 		array_unshift($links, $settings_link);
 	}
 
