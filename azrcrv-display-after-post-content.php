@@ -3,7 +3,7 @@
  * ------------------------------------------------------------------------------
  * Plugin Name: Display After Post Content
  * Description: Allows insertion of content configured through admin panel to be displayed after the post content; works with shortcodes including Contact Form 7 and is multisite compatible.
- * Version: 1.1.3
+ * Version: 1.1.4
  * Author: azurecurve
  * Author URI: https://development.azurecurve.co.uk/classicpress-plugins/
  * Plugin URI: https://development.azurecurve.co.uk/classicpress-plugins/display-after-post-content/
