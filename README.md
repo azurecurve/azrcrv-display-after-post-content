@@ -5,8 +5,6 @@
 
 Allows insertion of content configured through admin panel to be displayed after the post content; supports HTML format and works with shortcodes including Contact Form 7 and is multisite compatible.
 
-== Installation ==
-
 # Installation Instructions
 
  * Download the latest release of the plugin from [GitHub](https://github.com/azurecurve/azrcrv-display-after-post-content/releases/latest/).
