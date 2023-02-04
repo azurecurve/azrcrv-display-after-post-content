@@ -1,14 +1,15 @@
 === Display After Post Content ===
 
 Description:	Allows insertion of content configured through admin panel to be displayed after the post content; works with shortcodes including Contact Form 7 and is multisite compatible.
-Version:		1.2.3
+Version:		1.2.4
 Tags:			post, content
 Author:			azurecurve
 Author URI:		https://development.azurecurve.co.uk/
 Plugin URI:		https://development.azurecurve.co.uk/classicpress-plugins/display-after-post-content/
-Download link:	https://github.com/azurecurve/azrcrv-display-after-post-content/releases/download/v1.2.3/azrcrv-display-after-post-content.zip
+Download link:	https://github.com/azurecurve/azrcrv-display-after-post-content/releases/download/v1.2.4/azrcrv-display-after-post-content.zip
 Donate link:	https://development.azurecurve.co.uk/support-development/
 Requires PHP:	5.6
+Requires CP:	1.0
 Requires:		1.0.0
 Tested:			4.9.99
 Text Domain:	display-after-post-content
@@ -47,6 +48,9 @@ This plugin is developed for ClassicPress, but will likely work on WordPress.
 
 # Changelog
 
+### [Version 1.2.4](https://github.com/azurecurve/azrcrv-display-after-post-content/releases/tag/v1.2.4)
+ * 	Update readme file for compatibility with ClassicPress Directory.
+ 
 ### [Version 1.2.3](https://github.com/azurecurve/azrcrv-display-after-post-content/releases/tag/v1.2.3)
  * Update readme files.
  * Update language template.
