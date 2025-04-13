@@ -3,8 +3,9 @@
  * ------------------------------------------------------------------------------
  * Plugin Name:		Display After Post Content
  * Description:		Allows insertion of content configured through admin panel to be displayed after the post content; works with shortcodes and is multisite compatible.
- * Version:			1.2.5
+ * Version:			1.2.6
  * Requires CP:		1.0
+ * Requires PHP:	7.4
  * Author:			azurecurve
  * Author URI:		https://development.azurecurve.co.uk/classicpress-plugins/
  * Plugin URI:		https://development.azurecurve.co.uk/classicpress-plugins/display-after-post-content/
@@ -382,7 +383,7 @@ function azrcrv_dapc_display_after_post_content($content){
 				$display_after_post_content = stripslashes($options['display_after_post_content']);
 			}else{
 				$network_options = get_site_option('display_after_post_content');
-				if (strlen($network_options['display_after_post_content']) > 0){
+				if ( $network_options and strlen($network_options['display_after_post_content']) > 0){
 					$display_after_post_content = stripslashes($network_options['display_after_post_content']);
 				}
 			}
